@@ -1,0 +1,130 @@
+{
+    "certificateAuthorities": {
+        "ca.org1.com": {
+            "caName": "ca.org1.com",
+            "httpOptions": {
+                "verify": false
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICTjCCAfSgAwIBAgIRAJ/iWZrn9kXAbqa5tDpOhcYwCgYIKoZIzj0EAwIwcTES\nMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNVBAcTBWVh\ncnRoMREwDwYDVQQKEwhvcmcxLmNvbTERMA8GA1UECxMIR3JlZW5SbkQxFDASBgNV\nBAMTC2NhLm9yZzEuY29tMB4XDTIyMDcyNjA4NTAwMFoXDTMyMDcyMzA4NTAwMFow\ncTESMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNVBAcT\nBWVhcnRoMREwDwYDVQQKEwhvcmcxLmNvbTERMA8GA1UECxMIR3JlZW5SbkQxFDAS\nBgNVBAMTC2NhLm9yZzEuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvXk2\nM5WCekaPUF+A3yanvAKj2Mta7VylA5FBhFVpYkTjtqrK/D7f+nnrMjgv2/xMmiKu\nv0nkAotzco6xihm9pKNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsG\nAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCAzFCDM\nrBFODJQ9pWiOaGXDWZGzIIYOkMNuUKMrH85QgzAKBggqhkjOPQQDAgNIADBFAiEA\nhyzTD4pNgd2hW7D2WrHAhvCS1M33ARv8af1EohB1szsCIBa9i9GF8YP8yywf7+p+\nMeaCYnI7SnKkDVKXvzTX1qKv\n-----END CERTIFICATE-----"
+            },
+            "url": "https://ca-org1.hamnad-auction.baas.greenrnd.com:443"
+        },
+        "ca.org2.com": {
+            "caName": "ca.org2.com",
+            "httpOptions": {
+                "verify": false
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICTjCCAfSgAwIBAgIRAIifKz61R+pzrnqJ5mjN03gwCgYIKoZIzj0EAwIwcTES\nMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNVBAcTBWVh\ncnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQxFDASBgNV\nBAMTC2NhLm9yZzIuY29tMB4XDTIyMDcyNjA4NTAwMFoXDTMyMDcyMzA4NTAwMFow\ncTESMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNVBAcT\nBWVhcnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQxFDAS\nBgNVBAMTC2NhLm9yZzIuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5z6N\nnvCrJlKER7gN8N35PWPPkzb1epKGlbiWYuuf7f3GjCUcriB03kuLcNG4ulSq2+Kr\nnm8jydAETH1p7kgWZKNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsG\nAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCD+MXq4\nV2uiKbpmOuSprw7zMqMGUarBtUKw82+8S7dOZjAKBggqhkjOPQQDAgNIADBFAiEA\n31KJrRrHHLBG3+FkqUc91cn17I4xrrz01WVOtyFthd0CIFlxEFWVq3OgrqAi4FsV\ngwEmCBNn4IyZ3rlu96CtctQ1\n-----END CERTIFICATE-----"
+            },
+            "url": "https://ca-org2.hamnad-auction.baas.greenrnd.com:443"
+        }
+    },
+    "channels": {
+        "auction": {
+            "orderers": [
+                "orderer0.orderer.org1.com",
+                "orderer0.orderer.org2.com"
+            ],
+            "peers": {
+                "peer0.org1.com": {
+                    "chaincodeQuery": true,
+                    "endorsingPeer": true,
+                    "eventSource": true,
+                    "ledgerQuery": true
+                },
+                "peer0.org2.com": {
+                    "chaincodeQuery": true,
+                    "endorsingPeer": true,
+                    "eventSource": true,
+                    "ledgerQuery": true
+                }
+            }
+        }
+    },
+    "description": "Sample connection profile for user guidance",
+    "name": "connection.profile",
+    "orderers": {
+        "orderer0.orderer.org1.com": {
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUjCCAfmgAwIBAgIQC7yfyyI7qdHSrlodL6hLfzAKBggqhkjOPQQDAjB0MRIw\nEAYDVQQGEwlXb3JsZFdpZGUxDzANBgNVBAgTBmdhbGF4eTEOMAwGA1UEBxMFZWFy\ndGgxETAPBgNVBAoTCG9yZzEuY29tMREwDwYDVQQLEwhHcmVlblJuRDEXMBUGA1UE\nAxMOdGxzY2Eub3JnMS5jb20wHhcNMjIwNzI2MDg1MDAwWhcNMzIwNzIzMDg1MDAw\nWjB0MRIwEAYDVQQGEwlXb3JsZFdpZGUxDzANBgNVBAgTBmdhbGF4eTEOMAwGA1UE\nBxMFZWFydGgxETAPBgNVBAoTCG9yZzEuY29tMREwDwYDVQQLEwhHcmVlblJuRDEX\nMBUGA1UEAxMOdGxzY2Eub3JnMS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC\nAAQC4v2MZLKnOvQBrm0zTs+a5crILUm4KMgmT5OF62lIOGdEGkBMANZ6i8il6JrF\ni00UZtuz2ek5vnyxfr0GNneno20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYw\nFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIE\nIAzwJTBHVZBlmypCfWPR0FGaW0ntSE3dpD6Qw9E3/s5OMAoGCCqGSM49BAMCA0cA\nMEQCIGAHjxhcWNGxYjNrAtvjUyy4h+fSyXWEqZIm0+eF6zk1AiAkPQxT8Az2ILNY\nXC4kRpzgoD1x/qXVGAut684/qOtV+A==\n-----END CERTIFICATE-----"
+            },
+            "url": "grpcs://orderer0-orderer-org1.hamnad-auction.baas.greenrnd.com:443"
+        },
+        "orderer0.orderer.org2.com": {
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUzCCAfqgAwIBAgIRAKNgRSLLwr4/FkBv+7+hr8swCgYIKoZIzj0EAwIwdDES\nMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNVBAcTBWVh\ncnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQxFzAVBgNV\nBAMTDnRsc2NhLm9yZzIuY29tMB4XDTIyMDcyNjA4NTAwMFoXDTMyMDcyMzA4NTAw\nMFowdDESMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNV\nBAcTBWVhcnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQx\nFzAVBgNVBAMTDnRsc2NhLm9yZzIuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD\nQgAEwWTG/tnanbDZzH1sOQvH9MQM0KZxPbZQvZDFo7avx7XAJHbVjCJq3WTnl8TC\neo3QraZgokpdvxx+icu7KE97uaNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQW\nMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQi\nBCCb36Ex8gCHbup6BPeHp0SHmQZV1DUZjOfdwmvmruTN+DAKBggqhkjOPQQDAgNH\nADBEAiAtBrRe1OwsrzceO36N5T2Fz1ErcYiu3HnDchO+XvbtmQIgNck18Qc67WdE\n244DRETQBMy6fCaIR1fLYsudeqUkNEc=\n-----END CERTIFICATE-----"
+            },
+            "url": "grpcs://orderer0-orderer-org2.hamnad-auction.baas.greenrnd.com:443"
+        }
+    },
+    "organizations": {
+        "org1": {
+            "certificateAuthorities": [
+                "ca.org1.com"
+            ],
+            "mspid": "Orgorg1MSP",
+            "orderers": [
+                "orderer0.orderer.org1.com"
+            ],
+            "peers": [
+                "peer0.org1.com",
+                "peer1.org1.com"
+            ]
+        },
+        "org2": {
+            "certificateAuthorities": [
+                "ca.org2.com"
+            ],
+            "mspid": "Orgorg2MSP",
+            "orderers": [
+                "orderer0.orderer.org2.com"
+            ],
+            "peers": [
+                "peer0.org2.com",
+                "peer1.org2.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.org1.com": {
+            "grpcOptions": {
+                "request-timeout": 120001
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUjCCAfmgAwIBAgIQC7yfyyI7qdHSrlodL6hLfzAKBggqhkjOPQQDAjB0MRIw\nEAYDVQQGEwlXb3JsZFdpZGUxDzANBgNVBAgTBmdhbGF4eTEOMAwGA1UEBxMFZWFy\ndGgxETAPBgNVBAoTCG9yZzEuY29tMREwDwYDVQQLEwhHcmVlblJuRDEXMBUGA1UE\nAxMOdGxzY2Eub3JnMS5jb20wHhcNMjIwNzI2MDg1MDAwWhcNMzIwNzIzMDg1MDAw\nWjB0MRIwEAYDVQQGEwlXb3JsZFdpZGUxDzANBgNVBAgTBmdhbGF4eTEOMAwGA1UE\nBxMFZWFydGgxETAPBgNVBAoTCG9yZzEuY29tMREwDwYDVQQLEwhHcmVlblJuRDEX\nMBUGA1UEAxMOdGxzY2Eub3JnMS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC\nAAQC4v2MZLKnOvQBrm0zTs+a5crILUm4KMgmT5OF62lIOGdEGkBMANZ6i8il6JrF\ni00UZtuz2ek5vnyxfr0GNneno20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYw\nFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIE\nIAzwJTBHVZBlmypCfWPR0FGaW0ntSE3dpD6Qw9E3/s5OMAoGCCqGSM49BAMCA0cA\nMEQCIGAHjxhcWNGxYjNrAtvjUyy4h+fSyXWEqZIm0+eF6zk1AiAkPQxT8Az2ILNY\nXC4kRpzgoD1x/qXVGAut684/qOtV+A==\n-----END CERTIFICATE-----"
+            },
+            "url": "grpcs://peer0-org1.hamnad-auction.baas.greenrnd.com:443"
+        },
+        "peer0.org2.com": {
+            "grpcOptions": {
+                "request-timeout": 120001
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUzCCAfqgAwIBAgIRAKNgRSLLwr4/FkBv+7+hr8swCgYIKoZIzj0EAwIwdDES\nMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNVBAcTBWVh\ncnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQxFzAVBgNV\nBAMTDnRsc2NhLm9yZzIuY29tMB4XDTIyMDcyNjA4NTAwMFoXDTMyMDcyMzA4NTAw\nMFowdDESMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNV\nBAcTBWVhcnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQx\nFzAVBgNVBAMTDnRsc2NhLm9yZzIuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD\nQgAEwWTG/tnanbDZzH1sOQvH9MQM0KZxPbZQvZDFo7avx7XAJHbVjCJq3WTnl8TC\neo3QraZgokpdvxx+icu7KE97uaNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQW\nMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQi\nBCCb36Ex8gCHbup6BPeHp0SHmQZV1DUZjOfdwmvmruTN+DAKBggqhkjOPQQDAgNH\nADBEAiAtBrRe1OwsrzceO36N5T2Fz1ErcYiu3HnDchO+XvbtmQIgNck18Qc67WdE\n244DRETQBMy6fCaIR1fLYsudeqUkNEc=\n-----END CERTIFICATE-----"
+            },
+            "url": "grpcs://peer0-org2.hamnad-auction.baas.greenrnd.com:443"
+        },
+        "peer1.org1.com": {
+            "grpcOptions": {
+                "request-timeout": 120001
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUjCCAfmgAwIBAgIQC7yfyyI7qdHSrlodL6hLfzAKBggqhkjOPQQDAjB0MRIw\nEAYDVQQGEwlXb3JsZFdpZGUxDzANBgNVBAgTBmdhbGF4eTEOMAwGA1UEBxMFZWFy\ndGgxETAPBgNVBAoTCG9yZzEuY29tMREwDwYDVQQLEwhHcmVlblJuRDEXMBUGA1UE\nAxMOdGxzY2Eub3JnMS5jb20wHhcNMjIwNzI2MDg1MDAwWhcNMzIwNzIzMDg1MDAw\nWjB0MRIwEAYDVQQGEwlXb3JsZFdpZGUxDzANBgNVBAgTBmdhbGF4eTEOMAwGA1UE\nBxMFZWFydGgxETAPBgNVBAoTCG9yZzEuY29tMREwDwYDVQQLEwhHcmVlblJuRDEX\nMBUGA1UEAxMOdGxzY2Eub3JnMS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC\nAAQC4v2MZLKnOvQBrm0zTs+a5crILUm4KMgmT5OF62lIOGdEGkBMANZ6i8il6JrF\ni00UZtuz2ek5vnyxfr0GNneno20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYw\nFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIE\nIAzwJTBHVZBlmypCfWPR0FGaW0ntSE3dpD6Qw9E3/s5OMAoGCCqGSM49BAMCA0cA\nMEQCIGAHjxhcWNGxYjNrAtvjUyy4h+fSyXWEqZIm0+eF6zk1AiAkPQxT8Az2ILNY\nXC4kRpzgoD1x/qXVGAut684/qOtV+A==\n-----END CERTIFICATE-----"
+            },
+            "url": "grpcs://peer1-org1.hamnad-auction.baas.greenrnd.com:443"
+        },
+        "peer1.org2.com": {
+            "grpcOptions": {
+                "request-timeout": 120001
+            },
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUzCCAfqgAwIBAgIRAKNgRSLLwr4/FkBv+7+hr8swCgYIKoZIzj0EAwIwdDES\nMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNVBAcTBWVh\ncnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQxFzAVBgNV\nBAMTDnRsc2NhLm9yZzIuY29tMB4XDTIyMDcyNjA4NTAwMFoXDTMyMDcyMzA4NTAw\nMFowdDESMBAGA1UEBhMJV29ybGRXaWRlMQ8wDQYDVQQIEwZnYWxheHkxDjAMBgNV\nBAcTBWVhcnRoMREwDwYDVQQKEwhvcmcyLmNvbTERMA8GA1UECxMIR3JlZW5SbkQx\nFzAVBgNVBAMTDnRsc2NhLm9yZzIuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD\nQgAEwWTG/tnanbDZzH1sOQvH9MQM0KZxPbZQvZDFo7avx7XAJHbVjCJq3WTnl8TC\neo3QraZgokpdvxx+icu7KE97uaNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQW\nMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQi\nBCCb36Ex8gCHbup6BPeHp0SHmQZV1DUZjOfdwmvmruTN+DAKBggqhkjOPQQDAgNH\nADBEAiAtBrRe1OwsrzceO36N5T2Fz1ErcYiu3HnDchO+XvbtmQIgNck18Qc67WdE\n244DRETQBMy6fCaIR1fLYsudeqUkNEc=\n-----END CERTIFICATE-----"
+            },
+            "url": "grpcs://peer1-org2.hamnad-auction.baas.greenrnd.com:443"
+        }
+    },
+    "version": "1.0",
+    "x-type": "hlfv1"
+}
