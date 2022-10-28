@@ -20,6 +20,40 @@ const chaincodeName = 'auction'
 //*********************************
 //General
 //*********************************
+
+
+    //MultiLang Error
+    const multiLangError = {
+        en_1000 : 'suggestion not exist' ,
+        fa_1000 : 'پیشنهاد وجود ندارد' ,
+
+        en_1001 : 'auction not exist' ,
+        fa_1001 : 'درخواست فروش با این مشخصات وجود ندارد' ,
+
+        en_1002 : 'auction is not available' ,
+        fa_1002 : 'درخواست فروشی با این مشخصات در دسترس  نمی باشد' ,
+
+        en_1003 : 'suggestion is not valid' ,
+        fa_1003 : 'پیشنهاد معتبر نمی باشد' ,
+
+        en_1004 : 'auction owner can not register suggestion for that auction' ,
+        fa_1004 : 'فروشنده امکان ثبت پیشنهاد برای درخواست خود ندارد' ,
+
+        en_1005 : 'auction is not available' ,
+        fa_1005 : 'درخواست فروشی با این مشخصات در دسترس  نمی باشد' ,
+
+        en_1006 : 'suggested price cannot be lower than base price' ,
+        fa_1006 : 'قیمت پیشنهادی نمی تواند کمتر از قیمت پایه باشد' ,
+
+        en_1007 : 'suggestion registration date cannot be befor than auction registration date' ,
+        fa_1007 : 'تاریخ ثبت پیشنهاد نمی تواند قبل از تاریخ ثبت درخواست فروش باشد' ,
+
+        en_1008 : 'suggestion registration date cannot be after than auction available days' ,
+        fa_1008 : 'تاریخ ثبت پیشنهاد نمی تواند پس از زمان انقضای درخواست باشد' ,    
+    };
+
+
+
     //Run every Day
     const job = schedule.scheduleJob('0 0 0 * * *', function(){
         //console.log('Job');
@@ -250,6 +284,7 @@ const chaincodeName = 'auction'
         const regDate = new Date().toISOString().split('T')[0];
     
         const {
+            lang,
             personID,
             auctionID,
             suggestedPrice
@@ -271,9 +306,10 @@ const chaincodeName = 'auction'
                 ]
             )
         }catch(ex){
-            console.log(errorEncoding(ex.message))
+            let err = multiLangError[lang + '_' + errorEncoding(ex.message)];
+            console.log(err)
             return res.send({
-                message : errorEncoding(ex.message)
+                message : err
             })
         }
     
@@ -287,6 +323,7 @@ const chaincodeName = 'auction'
     //*********************************
     //accept Suggestion
     app.post('/acceptSuggestion', async (req , res) =>{
+        const lang = req.body.lang;
         const suggestionId = req.body.suggestionId;
         console.log(suggestionId);
         
@@ -302,9 +339,10 @@ const chaincodeName = 'auction'
                 ]
             )
         }catch(ex){
-            console.log(ex.message)
+            let err = multiLangError[lang + '_' + errorEncoding(ex.message)];
+            console.log(err)
             return res.send({
-                message : ex.message
+                message : err
             })
         }
     
